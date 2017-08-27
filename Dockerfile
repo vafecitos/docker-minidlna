@@ -16,7 +16,6 @@ RUN echo deb http://ftp.debian.org/debian/ stretch main non-free contrib > /etc/
 	apt-get clean															;\
 	rm -rf /var/cache/apt/*
 
-ADD ./run.sh /run.sh
 ADD ./minidlna.conf /etc/minidlna.conf
 
 ENTRYPOINT ["/usr/sbin/minidlnad", "-d", "-f /etc/minidlna.conf", "-R"]
